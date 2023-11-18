@@ -13,12 +13,12 @@ pub(crate) struct User{
     pub phone_number:String
 }
 
-struct UserUseCase{
+pub struct UserUseCase{
     repo: dyn UserRepo,
 }
 
 impl UserRepo for UserUseCase {
-    fn register(self,user: User) -> Box<dyn Error> {
+   fn register(self,user: User) -> Box<dyn Error> {
         self.repo.register(user: User)
     }
 
